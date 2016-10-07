@@ -8,6 +8,6 @@ GA Adventure is an interactive story game where the Adventurer is a no body who 
 To go to user story go to [this link](https://trello.com/b/dggL1wgh/wdi-project-1-ga-adventure) to view
 
 ##Wireframes
-![Below is the intro page to the game](GA_Adventure/assets/wireFrame1.jpg)
+![Below is the intro page to the game](https://github.com/neonagx/GA_Adventure/blob/master/assets/wireFrame1.jpg?raw=true)
 
 ![](GA_Adventure/assets/wireFrame2.jpg)
