@@ -1,6 +1,6 @@
 #Project 1: GA Adventure
 
-###By Sukhyun Baik
+###By Sukhyun (Paul) Baik
 
 ##About GA Adventure
 
