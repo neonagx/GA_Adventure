@@ -13,7 +13,7 @@ $('body').on('click','#scroll1', function next() {
 
 $('body').on('click','#scroll2', function next() {
   var $screen = $('#mainScreen');
-  $screen.html('<img src="https://www.colourbox.com/preview/6415001-3d-cartoon-green-monster.jpg" alt="HTML Monter">');
   $screen.html('<div id="question1">What is HTML?</div>')
-  $screen.append('<button id="Ques1">Next--></button>', '<button id="Ques2">Next--></button>', '<button id="Ques3">Next--></button>','<button id="Ques4">Next--></button>')
+  $('body').prepend('<img id="htmlMon" src="https://www.colourbox.com/preview/6415001-3d-cartoon-green-monster.jpg" alt="HTML Monter">');
+  $screen.append('<button id="Ques1">Hyper Text Mess Link</button>', '<button id="Ques2">Hyper Tremor Message Loss</button>', '<button id="Ques3">Hyper Text Mixed Language</button>','<button id="Ques4">Hypo Text Mixed Language</button>');
 })
