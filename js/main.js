@@ -1,3 +1,3 @@
-console.log(connected)
+console.log("connected")
 
-$('div').append('<div>What is it?</div>')
+$('body').append('<ul>What is it?</ul>')
