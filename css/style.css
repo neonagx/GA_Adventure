@@ -32,3 +32,8 @@ button {
   margin: 30px solid red;
   padding: 40px solid black;
 }
+
+img {
+  height: 200px;
+  width: 200px;
+}
