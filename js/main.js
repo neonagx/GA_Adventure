@@ -1,3 +1,10 @@
+// var html = {
+//   questions: ['What is HTML?', 'What must be in the Header?', 'How do you insert image to the body?', 'On Atom/Sublime text editor, how do you bring up Doctype HTML in index.html?', 'What is the correct order (largest to smallest) of heading relative to size?', 'Where does Javascript src go?', 'What is <p>?', 'What is the most commonly seen tag and a generic container for content?', 'What tag links us to other page?', 'What is the correct way to link HTML and Javascript main.js file from js directory?']
+//   rightAnswer: ['']
+// }
+
+
+
 $('#startButton').on('click',function mainGame() {
   $('body').html('<div id="mainScreen"></div>');
   var $screen = $('#mainScreen');
@@ -19,12 +26,12 @@ $('body').on('click','#scroll2', function next() {
 
 //Question 1 What is HTML?
 $('body').on('click','#scroll3', function next() {
+  $('body').prepend('<img id="htmlMon" src="https://www.colourbox.com/preview/6415001-3d-cartoon-green-monster.jpg" alt="HTML Monter">');
   var $screen = $('#mainScreen');
   $screen.html('<div id="questions">What is HTML?</div>')
-  $('body').prepend('<img id="htmlMon" src="https://www.colourbox.com/preview/6415001-3d-cartoon-green-monster.jpg" alt="HTML Monter">');
   $screen.append('<div id="questionnaire"><button class="wrong1">Hyper Text Mess Link</button> <button class="wrong1">Hyper Tremor Message Loss</button><button class="right1">Hyper Text Markup Language</button><button class="wrong1">Hypo Text Mixed Language</button></div>');
 })
-//Question 2 What must be in the Header?
+// //Question 2 What must be in the Header?
 $('body').on('click', '.wrong1', function() {
   console.log('Wrong! Monster has noticed you!!');
   var $question = $('#questions');
@@ -65,4 +72,52 @@ $('body').on('click', '.wrong3', function() {
   var $question = $('#questions');
   $question.text('On Atom/Sublime text editor, how do you bring up DOCTYPE! html in the index.html?');
   $('#questionnaire').html('<button class="wrong4">typing html and pressing enter</button><button class="wrong4">It should just summon html by itself</button><button class="wrong4">HTML should already exit</button><button class="right4">typing html and pressing tab</button>')
+})
+
+$('body').on('click', '.right3', function() {
+  console.log('Damage 1 to monster! Monster is dazed!');
+  var $question = $('#questions');
+  $question.text('On Atom/Sublime text editor, how do you bring up DOCTYPE! html in the index.html?');
+  $('#questionnaire').html('<button class="wrong4">typing html and pressing enter</button><button class="wrong4">It should just summon html by itself</button><button class="wrong4">HTML should already exit</button><button class="right4">typing html and pressing tab</button>')
+})
+
+//Question 5
+
+$('body').on('click', '.wrong4', function() {
+  console.log('Monster started to growl, poised right at you');
+  var $question = $('#questions');
+  $question.text('What the is the correct order of heading relative to size?');
+  $('#questionnaire').html('<button class="wrong5">h3,h2,h1</button><button class="right5">h1,h2,h3</button><button class="wrong5">h2,h3,h1</button><button class="wrong5">h1,h3,h2</button>')
+})
+
+$('body').on('click', '.right4', function() {
+  console.log('Damage 1 to the Monster, it is weakened!');
+  var $question = $('#questions');
+  $question.text('What the is the correct order of heading relative to size?');
+  $('#questionnaire').html('<button class="wrong5">h3,h2,h1</button><button class="right5">h1,h2,h3</button><button class="wrong5">h2,h3,h1</button><button class="wrong5">h1,h3,h2</button>')
+})
+
+//Question 6
+
+$('body').on('click', '.wrong5', function() {
+  console.log('Monster charged at you, slashed your guts and ate you as a whole!');
+  var $question = $('#questions');
+  $question.text('Where does Javascript src go?');
+  $('#questionnaire').html('<button class="wrong6">beginning of body</button><button class="wrong6">beginning of header</button><button class="wrong6">end of the html page</button><button class="right6">before the end of body right</button>')
+})
+
+$('body').on('click', '.right5', function() {
+  console.log('Damage 1 to monster, he is bleeding from his eyes');
+  var $question = $('#questions');
+  $question.text('Where does Javascript src go?');
+  $('#questionnaire').html('<button class="wrong6">beginning of body</button><button class="wrong6">beginning of header</button><button class="wrong6">end of the html page</button><button class="right6">before the end of body right</button>')
+})
+
+//Question 7
+
+$('body').on('click', '.right6', function() {
+  console.log('Damage 1 to monster, he is bleeding from his eyes');
+  var $question = $('#questions');
+  $question.text('Where does Javascript src go?');
+  $('#questionnaire').html('<button class="wrong7">beginning of body</button><button class="wrong7">beginning of header</button><button class="right7">end of the html page</button><button class="wrong7">before the end of body right</button>')
 })
