@@ -1,44 +1,37 @@
-#startButton {
-  margin: 0 auto;
-  border: 100px;
-  padding: 100px;
-  font-size: 10px;
-  height: 20px;
-  width: 100px;
-  text-align: center;
-}
-
-body {
-  font-size: 40px;
-  font-family: 'Press Start 2P', cursive;
-}
-
 h1 {
-  font-size: 100px;
+  font-size: 160px;
   margin: 0 auto;
   text-align: center;
+  font-family: 'Press Start 2P', cursive;
 }
 
-button {
-
-  margin: 90px solid red;
-  border: 20px solid black;
-  padding: 90px;
-  height: 90px;
+body #startButton{
   font-size: 40px;
-  text-align: center;
   font-family: 'Press Start 2P', cursive;
+  margin: 200px 900px 200px 550px;
+  border: 10px solid black;
+  padding: 30px;
+}
+
+body{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 40px;
 }
 
 #mainScreen {
-  border: 20px solid blue;
-  margin: 30px solid red;
-  padding: 40px solid black;
+  border: 10px solid blue;
+}
+
+button {
+  font-size: 40px;
+  font-family: 'Press Start 2P', cursive;
+  border: 10px solid black;
+  margin: 100px;
 }
 
 img {
   height: 400px;
   width: 500px;
   border: 20px solid red;
-  margin: 100px
+  margin: 200px 200px 100px 400px
 }

@@ -1,8 +1,8 @@
-$('button').on('click',function mainGame() {
+$('#startButton').on('click',function mainGame() {
   $('body').html('<div id="mainScreen"></div>');
   var $screen = $('#mainScreen');
   $screen.html('<p id="intro">It is a world of General Assembly where an adventurer goes to become the Three Weeks Master.<p>')
-  $screen.append('<button id="scroll1">Next --></button>')
+  $screen.append('<button id="scroll1">Next--></button>')
 })
 
 $('body').on('click','#scroll1', function next() {
@@ -13,7 +13,7 @@ $('body').on('click','#scroll1', function next() {
 
 $('body').on('click','#scroll2', function next() {
   var $screen = $('#mainScreen');
-  $screen.html('<p>Journey will not be an easy one.  Through the peril there a path to victory.  Good luck!!</p>');
+  $screen.html('<p>Journey will not be an easy one.  Through the peril, there is a path to victory.  Good luck!!</p>');
   $screen.append('<button id="scroll3">Next--></button>')
 })
 
