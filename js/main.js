@@ -4,7 +4,6 @@
 // }
 
 
-
 $('#startButton').on('click',function mainGame() {
   $('body').html('<div id="mainScreen"></div>');
   var $screen = $('#mainScreen');
@@ -25,14 +24,28 @@ $('body').on('click','#scroll2', function next() {
 })
 
 //Question 1 What is HTML?
+var wrongScore = 0
+if(wrongScore === 1){
+  console.log('Wrong! Monster has noticed you!!')
+} else if (wrongScore === 2) {
+  console.log('Monster has been enraged!!')
+} else if (wrongScore === 3) {
+  console.log('Monster took out his sharp claw from his hands')
+} else if (wrongScore === 4) {
+  console.log('Monster took out his sharp claw from his hands')
+}
+
 $('body').on('click','#scroll3', function next() {
   $('body').prepend('<img id="htmlMon" src="https://www.colourbox.com/preview/6415001-3d-cartoon-green-monster.jpg" alt="HTML Monter">');
+  $('body').prepend('<div id="score">Number Wrong:</div>')
+  $('<h3>', {html: wrongScore}).appendTo('#score')
   var $screen = $('#mainScreen');
   $screen.html('<div id="questions">What is HTML?</div>')
   $screen.append('<div id="questionnaire"><button class="wrong1">Hyper Text Mess Link</button> <button class="wrong1">Hyper Tremor Message Loss</button><button class="right1">Hyper Text Markup Language</button><button class="wrong1">Hypo Text Mixed Language</button></div>');
 })
 // //Question 2 What must be in the Header?
 $('body').on('click', '.wrong1', function() {
+  wrongScore +=1
   console.log('Wrong! Monster has noticed you!!');
   var $question = $('#questions');
   $question.text('What must be in the Header?');
