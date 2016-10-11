@@ -13,6 +13,11 @@ body #startButton{
   padding: 30px;
 }
 
+p {
+  font-size: 400px
+  color: red;
+}
+
 body{
   font-family: 'Press Start 2P', cursive;
   font-size: 40px;
@@ -45,6 +50,13 @@ div #questionnaire {
 
 #score {
   float: right;
+  font-size: 40px;
+  border: 5px solid black;
+}
+
+#kill1 {
+  text-align: center;
+  margin: 50px 300px 100px 300px;
   font-size: 40px;
   border: 5px solid black;
 }
