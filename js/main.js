@@ -1,25 +1,160 @@
 var htmlQuestion = [
   {
-    question: ['What is HTML?', 'What must be in the Header?', 'How do you insert image to the body?', 'On Atom/Sublime text editor, how do you bring up Doctype HTML in index.html?', 'What is the correct order (largest to smallest) of heading relative to size?', 'Where does Javascript src go?', 'What is <p>?', 'What is the most commonly seen tag and a generic container for content?', 'What tag links us to other page?', 'What is the correct way to link HTML and Javascript main.js file from js directory?'],
-    wrong: ['Hyper Text Mess Link','Hyper Tremor Message Loss','Hypo Text Mixed Language', 'script', 'body', 'div'],
-    answer: ['Hyper Text Markup Language', 'title']
-  },
-  {
-    question: 'BlahBabal?',
-    options: ['a','b','c','d'],
-    answer: 2,
-  },
-  {
     question: 'What is HTML?',
-    options: ['a','b','c','d'],
-    answer: 3,
+    choices: ['Hyper Text Mess Link','Hyper Tremor Message Loss','Hyper Text Markup Language','Hypo Text Mixed Language'],
+    answer: 'Hyper Text Markup Language'
   },
+  {
+    question: 'What must be in the Header?',
+    choices: ['title', 'script', 'body', 'div'],
+    answer: 'title'
+  },
+  {
+    question: 'How do you insert image to the body?',
+    choices: ['insert image','<image>image</image>','<img src="url">','copy and paste image url'],
+    answer: '<img src="url">'
+  },
+  {
+    question: 'What is the correct order (largest to smallest) of heading relative to size?',
+    choices: ['h3,h2,h1','h1,h2,h3','h2,h3,h1','h1,h3,h2'],
+    answer: 'h1,h2,h3'
+  },
+  {
+    question: 'On Atom/Sublime text editor, how do you bring up Doctype HTML in index.html?',
+    choices: ['typing html and pressing enter','It should just summon html by itself','HTML should already exit','typing html and pressing tab'],
+    answer: 'typing html and pressing tab'
+  },
+  {
+    question: 'Where does Javascript src go?',
+    choices: ['beginning of body','beginning of header','end of the html page','before the end of body'],
+    answer: 'before the end of body'
+  },
+  {
+    question: 'What is <p>?',
+    choices: ['paper','personal log','paragraph','ping'],
+    answer: 'paragraph'
+  },
+  {
+    question: 'What is the most commonly seen tag and a generic container for content?',
+    choices: ['<div>','<p>','<ul>','<span>'],
+    answer: '<div>'
+  },
+  {
+    question: 'What tag links us to other page?',
+    choices: ['link page','img page','a ref','input page'],
+    answer: 'a ref'
+  },
+  {
+    question: 'What is the correct way to link HTML and Javascript main.js file from js directory?',
+    choices: ['It should be already there','<script type=“text/javascript” src=“js/main.js”></script>','html/script','<script>html</script>'],
+    answer: '<script type=“text/javascript” src=“js/main.js”></script>'
+  }
 ]
 
+var cssQuestion = [
+  {
+    question: 'What is CSS?',
+    choices: ['Cascading Style Sub','Card Sheer Sheet','Common Style Sheet','Cascading Style Sheet'],
+    answer: 'Cascading Style Sheet'
+  },
+  {
+    question: 'How do you make css on atom?',
+    choices: ['make a directory and put css', 'just put style.css on html', 'Make a directory and touch style.css', 'It should be already there'],
+    answer: 'Make a directory and touch style.css'
+  },
+  {
+    question: 'What are three different ways to use CSS to style HTML?',
+    choices: ['Insert Sheet, Input Sheet, Style Sheet','External style sheet, Eternal style sheet, Intra style sheet', 'Eternal style sheet, Intra style sheet, Insert style','Extra style sheet, Idra style sheet, Info style'],
+    answer: 'External style sheet, internal style sheet, Inline style'
+  },
+  {
+    question: 'How do you link style.css to html?',
+    choices: ['link.style.css','html=link style.css','<link rel=“stylesheet” href=“css/style.css”>','<link rel=“stylesheet” “css/style.css”>'],
+    answer: '<link rel=“stylesheet” href=“css/style.css”>'
+  },
+  {
+    question: 'What is never used in CSS?',
+    choices: ['Inline style, internal style','External style sheet, inline style','External style, Internal style sheet','Indy style, Inline style'],
+    answer: 'Inline style, internal style'
+  },
+  {
+    question: 'How do you change the background color of the body?',
+    choices: ['body{ background: red; }','body{ red; }','color: red;','body{ background = red; }'],
+    answer: 'body{ background: red; }'
+  },
+  {
+    question: 'How do you select a class with “oneLine” in CSS?',
+    choices: ['#oneLine','class oneLine','.oneLine','Just select it'],
+    answer: '.oneLine'
+  },
+  {
+    question: 'How do you select an ID with “twoLine” in CSS?',
+    choices: ['.twoLine','#twoLine','id twoLine','Just like class, just select it'],
+    answer: '#twoLine'
+  },
+  {
+    question: 'What is way to center text?',
+    choices: ['Center','It is always centered','text-center','margin: 0 auto'],
+    answer: 'margin: 0 auto'
+  },
+  {
+    question: 'What is the most specific selector?',
+    choices: ['style attribute','elements','class, pseudo class','ID'],
+    answer: 'ID'
+  }
 
-//   'What is HTML?', 'What must be in the Header?', 'How do you insert image to the body?', 'On Atom/Sublime text editor, how do you bring up Doctype HTML in index.html?', 'What is the correct order (largest to smallest) of heading relative to size?', 'Where does Javascript src go?', 'What is <p>?', 'What is the most commonly seen tag and a generic container for content?', 'What tag links us to other page?', 'What is the correct way to link HTML and Javascript main.js file from js directory?']
-//   rightAnswer: ['ala']
-// }
+  var javascriptQuestion = [
+    {
+      question: 'What is the five primitive types of Javascript?',
+      choices: ['String, number, boolean, null, undefined','String, name, boolean, nell, defined','Straw, number, boolean, null, undefined','String, name, bolean, null, undenied'],
+      answer: 'String, number, boolean, null, undefined'
+    },
+    {
+      question: 'What does .length do?',
+      choices: ['Shows you length of length', 'Shows you length of a period', 'Shows you length of a string or array', 'Shows you length of empty space'],
+      answer: 'Shows you length of a string or array'
+    },
+    {
+      question: 'What is array?',
+      choices: ['It is an light','A container of data, similar to the list', 'A beam of data','Scientific term of data'],
+      answer: 'A container of data, similar to the list'
+    },
+    {
+      question: 'What are the two loops in Javascript?',
+      choices: ['link.style.css','html=link style.css','<link rel=“stylesheet” href=“css/style.css”>','<link rel=“stylesheet” “css/style.css”>'],
+      answer: '<link rel=“stylesheet” href=“css/style.css”>'
+    },
+    {
+      question: 'What is never used in CSS?',
+      choices: ['Loop and loops','Loop 1 and loop 2','While loop, for loop','While, for'],
+      answer: 'While, for'
+    },
+    {
+      question: 'What must you do to insert a string in var a = [3, 4] and set array of a into var b?',
+      choices: ['var b = var a.push(“string”)','var b = a.push(“string”)','var a = a.push(“string”)','var b = a.push(“strong”)'],
+      answer: 'var b = a.push(“string”)'
+    },
+    {
+      question: 'What would return true?',
+      choices: ['var a = [“UCLA”, “USC”], var b = [“UCLA”, “USC”], var a === var b','var a = {name: “Godzilla”}, var b = {name: “Godzilla”}, var a === var b ','true === false','“hello” === ‘hello’'],
+      answer: '“hello” === ‘hello’'
+    },
+    {
+      question: 'What is correct way to use object constructor?',
+      choices: ['var new = {};','var new = object new {};','var new = object', 'var new = new Object();'],
+      answer: 'var new = new Object();'
+    },
+    {
+      question: 'How do you reassign var Person = {name: “Phil”} with name “Dona”?',
+      choices: ['name = “Dona”','person.name = “Dona”','Person.name = “Dona”','Just put “Dona” as a person name'],
+      answer: 'Person.name = “Dona”'
+    },
+    {
+      question: 'What is the answer to a function declaration,  multiplyArray that takes array of numbers and returns the product those numbers. For example, multiplyArray([2,4,5]); would return 40?',
+      choices: ['function multiplyArray(arr) { var product = 1; for (var i = 0; i < arr.length; i++) { product *= arr[i]; } return product; }','function multiplyArray() { var product = 1; { product *= arr[i]; } return product; }','function multiplyArray(arr) { for (var i = 0; i < arr.length; i++) { product *= arr[i]; } return product; }','function multiplyArray(arr) { var product = 1; for (var i = 0; i < arr.length; i++) { product *= arr[i]; } }'],
+      answer: 'function multiplyArray() { var product = 1; { product *= arr[i]; } return product; }'
+    }
+]
 
 
 $('#startButton').on('click',function mainGame() {
@@ -91,20 +226,20 @@ $('body').on('click','#scroll3', function next() {
   var $screen = $('#mainScreen');
   $screen.html('<div id="questions">'+htmlQuestion[0].question[0]+'</div>')
   $screen.append('<button id="wrong1">'+htmlQuestion[0].wrong[0]+'</button><button id="wrong2">'+htmlQuestion[0].wrong[1]+'</button><button id="correct">'+htmlQuestion[0].answer[0]+'</button><button id="wrong3">'+htmlQuestion[0].wrong[2]+'</button>');
+  $('#correct').on('click', function() {
+    $('#questions').text(htmlQuestion[0].question[1]);
+    $('#wrong1').attr('id', 'correct1').text(htmlQuestion[0].answer[1])
+    $('#wrong2').attr('id', 'wrong4').text(htmlQuestion[0].wrong[3])
+    $('#correct').attr('id', 'wrong5').text(htmlQuestion[0].wrong[4])
+    $('#wrong3').attr('id', 'wrong6').text(htmlQuestion[0].wrong[5])
+    monsterDamage -= 1
+    $('h2').eq(0).text(monsterDamage)
+    killingMon1()
+  })
 })
 // //Question 2 What must be in the Header?
-$('body').on('click', '#correct', function() {
-  $('#questions').text(htmlQuestion[0].question[1]);
-  $('#wrong1').attr('id', 'correct1').text(htmlQuestion[0].answer[1])
-  $('#wrong2').attr('id', 'wrong4').text(htmlQuestion[0].wrong[3])
-  $('#correct').attr('id', 'wrong5').text(htmlQuestion[0].wrong[4])
-  $('#wrong3').attr('id', 'wrong6').text(htmlQuestion[0].wrong[5])
-  monsterDamage -= 1
-  $('h2').eq(0).text(monsterDamage)
-  killingMon1()
-})
-for(var i = 0; i < 4 )
-$('body').on('click', '#wrong1', '#wrong2', function() {
+
+$('body').on('click', '#wrong1', function() {
   //alert later
   var $question = $('#questions');
   $question.text('What must be in the Header?');
@@ -257,12 +392,12 @@ $('body').on('click', '#wrong1', '#wrong2', function() {
 //   monster()
 // })
 //
-// $('body').on('click', '.right9', function() {
-//   monsterDamage -= 1
-//   $('h2').eq(0).text(monsterDamage)
-//   killingMon1()
-//   $('#htmlMon').attr("src", "assets/blueMon");
-//   var $question = $('#questions');
-//   $question.text('test');
-//   $('#questionnaire').html('<button class="wrong8">test</button><button class="test">test</button><button class="right8">test</button><button>test</button>')
-// })
+$('body').on('click', '.right9', function() {
+  monsterDamage -= 1
+  $('h2').eq(0).text(monsterDamage)
+  killingMon1()
+  $('#htmlMon').attr("src", "assets/blueMon");
+  var $question = $('#questions');
+  $question.text('test');
+  $('#questionnaire').html('<button class="wrong8">test</button><button class="test">test</button><button class="right8">test</button><button>test</button>')
+})
