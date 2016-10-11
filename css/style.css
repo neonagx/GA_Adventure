@@ -34,7 +34,7 @@ button {
   border: 10px solid black;
   width: 500px;
   height: 150px;
-  display: inline-block;
+  display: inline;
 }
 
 img {
