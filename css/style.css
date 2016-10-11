@@ -5,10 +5,10 @@ h1 {
   font-family: 'Press Start 2P', cursive;
 }
 
-body #startButton{
+#startButton{
   font-size: 40px;
   font-family: 'Press Start 2P', cursive;
-  margin: 200px 900px 200px 550px;
+  margin: 200px 900px 200px 600px;
   border: 10px solid black;
   padding: 30px;
 }
@@ -29,23 +29,23 @@ body{
 }
 
 button {
-  font-size: 40px;
+  font-size: 30px;
   font-family: 'Press Start 2P', cursive;
   border: 10px solid black;
-  margin: 30px;
+  width: 500px;
+  height: 150px;
+  display: inline-block;
 }
 
 img {
-  height: 400px;
-  width: 500px;
+  height: 800px;
+  width: 900px;
   border: 20px solid red;
-  margin: 100px 200px 100px 400px
+  margin: 100px 200px 100px 540px
 }
 
-div #questionnaire {
-  display: inline-block;
-  width: 200px 200px;
-  margin: 40px;
+#questions {
+  text-align: center;
 }
 
 #score {

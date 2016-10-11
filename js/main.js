@@ -87,7 +87,7 @@ $('body').on('click','#scroll3', function next() {
   $('body').prepend('<div id="score">Number Wrong:</div>')
   $('<div id="kill1">Monster Health:</div>').insertAfter('#htmlMon')
   $('<h3>', {html: wrongScore}).appendTo('#score')
-  $('<h3>', {html: monsterDamage}).appendTo('#kill1')
+  $('<h2>', {html: monsterDamage}).appendTo('#kill1')
   var $screen = $('#mainScreen');
   $screen.html('<div id="questions">'+htmlQuestion[0].question+'</div>')
   $screen.append('<div id="questionnaire"><button class="wrong1">Hyper Text Mess Link</button> <button class="wrong1">Hyper Tremor Message Loss</button><button class="right1">Hyper Text Markup Language</button><button class="wrong1">Hypo Text Mixed Language</button></div>');
@@ -107,6 +107,9 @@ $('body').on('click', '.right1', function() {
   var $question = $('#questions');
   $question.text('What must be in the Header?');
   $('#questionnaire').html('<button class="right2">title</button><button class="wrong2">script</button><button class="wrong2">body</button><button class="wrong2">div</button>')
+  monsterDamage -= 1
+  $('h2').eq(0).text(monsterDamage)
+  killingMon1()
 })
 // // Question 3 Inserting Image
 $('body').on('click', '.wrong2', function() {
@@ -126,6 +129,9 @@ $('body').on('click', '.right2', function() {
   $('#questionnaire').html('<button class="wrong3">"insert image"</button><button class="wrong3" id="wrong31"></button><button class="right3" id="right31"></button><button class="wrong3">"copy and paste image url to the body"</button>')
   $('#wrong31').text("<image>image</image>")
   $('#right31').text("<img src='url'>")
+  monsterDamage -= 1
+  $('h2').eq(0).text(monsterDamage)
+  killingMon1()
 })
 
 //Question 4 On Atom/Sublime text editor, how do you bring up Doctype html in index. html?
@@ -143,6 +149,9 @@ $('body').on('click', '.right3', function() {
   var $question = $('#questions');
   $question.text('On Atom/Sublime text editor, how do you bring up DOCTYPE! html in the index.html?');
   $('#questionnaire').html('<button class="wrong4">typing html and pressing enter</button><button class="wrong4">It should just summon html by itself</button><button class="wrong4">HTML should already exit</button><button class="right4">typing html and pressing tab</button>')
+  monsterDamage -= 1
+  $('h2').eq(0).text(monsterDamage)
+  killingMon1()
 })
 
 //Question 5
@@ -161,6 +170,9 @@ $('body').on('click', '.right4', function() {
   var $question = $('#questions');
   $question.text('What the is the correct order of heading relative to size?');
   $('#questionnaire').html('<button class="wrong5">h3,h2,h1</button><button class="right5">h1,h2,h3</button><button class="wrong5">h2,h3,h1</button><button class="wrong5">h1,h3,h2</button>')
+  monsterDamage -= 1
+  $('h2').eq(0).text(monsterDamage)
+  killingMon1()
 })
 
 //Question 6
@@ -179,6 +191,9 @@ $('body').on('click', '.right5', function() {
   var $question = $('#questions');
   $question.text('What is <p>?');
   $('#questionnaire').html('<button class="wrong6">paper</button><button class="wrong6">personal log</button><button class="right6">paragraph</button><button class="wrong6">ping</button>')
+  monsterDamage -= 1
+  $('h2').eq(0).text(monsterDamage)
+  killingMon1()
 })
 
 //Question 7
@@ -190,7 +205,6 @@ $('body').on('click', '.wrong6', function() {
 })
 
 $('body').on('click', '.right6', function() {
-
   var $question = $('#questions');
   $question.text('What is the most commonly seen tag and a generic container for content?');
   $('#questionnaire').html('<button class="right7"></button><button class="wrong7" id="wrong71"></button><button class="wrong7" id="wrong72"></button><button class="wrong7" id="wrong73"><span></button>')
@@ -198,6 +212,9 @@ $('body').on('click', '.right6', function() {
   $('#wrong71').text("<p>")
   $('#wrong72').text("<ul>")
   $('#wrong73').text("<span>")
+  monsterDamage -= 1
+  $('h2').eq(0).text(monsterDamage)
+  killingMon1()
 })
 
 $('body').on('click', '.wrong7', function() {
@@ -207,10 +224,12 @@ $('body').on('click', '.wrong7', function() {
 })
 
 $('body').on('click', '.right7', function() {
-
   var $question = $('#questions');
   $question.text('What tag links us to other page?');
   $('#questionnaire').html('<button class="wrong8">link page</button><button class="wrong8">img page</button><button class="right8">a ref</button><button class="wrong8">input page</button>')
+  monsterDamage -= 1
+  $('h2').eq(0).text(monsterDamage)
+  killingMon1()
 })
 
 $('body').on('click', '.wrong8', function() {
@@ -225,6 +244,9 @@ $('body').on('click', '.right8', function() {
   $('#questionnaire').html('<button class="wrong9">It should be already there</button><button class="right9"></button><button class="wrong9">html/script</button><button class="wrong92" id="wrong91"></button>')
   $('.right9').text("<script type=“text/javascript” src=“js/main.js”></script>")
   $('#wrong91').text("<script>html</script>")
+  monsterDamage -= 1
+  $('h2').eq(0).text(monsterDamage)
+  killingMon1()
 })
 
 $('body').on('click', '.wrong9', function() {
@@ -234,7 +256,9 @@ $('body').on('click', '.wrong9', function() {
 })
 
 $('body').on('click', '.right9', function() {
-  console.log('Monster Died!!! You are the victor!!');
+  monsterDamage -= 1
+  $('h2').eq(0).text(monsterDamage)
+  killingMon1()
   $('#htmlMon').attr("src", "assets/blueMon");
   var $question = $('#questions');
   $question.text('test');
