@@ -12,6 +12,7 @@ audio {
 
 #ga {
   color: red;
+  margin: 0px 0px 0px -50px;
 }
 
 #mainTitle {
@@ -37,7 +38,7 @@ h3 {
 #startButton {
   font-size: 40px;
   font-family: 'Press Start 2P', cursive;
-  margin: 0px 0px 0px 770px;
+  margin: 0px 0px 0px 761px;
   border: 10px solid black;
 }
 
@@ -46,13 +47,13 @@ h3 {
   font-size: 40px;
   font-family: 'Press Start 2P', cursive;
   margin: 0px 0px 0px 770px;
-  border: 10px solid green;
+  border: 10px solid red;
 }
 
 #resetButton {
   font-size: 30px;
   border: 5px solid black;
-  margin: 0px 900px 10px 859px;
+  margin: 10px 400px 10px 400px;
   float: none;
   text-align: center;
 }
