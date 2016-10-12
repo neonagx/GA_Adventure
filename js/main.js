@@ -215,7 +215,7 @@ function killingMon1() {
     console.log('Monster Died!!! You are the victor!!')
   }
 }
-
+var asdf = "WTF"
 var currentQuestion = htmlQuestion.splice(Math.floor(Math.random() * htmlQuestion.length), 1);
 var selectQuestion = currentQuestion[0].question;
 var selectChoice1 = currentQuestion[0].choices[0];
@@ -223,8 +223,7 @@ var selectChoice2 = currentQuestion[0].choices[1];
 var selectChoice3 = currentQuestion[0].choices[2];
 var selectChoice4 = currentQuestion[0].choices[3];
 var answerChoice = currentQuestion[0].answer;
-
-
+console.log(answerChoice);
 //Question 1 What is HTML?
 $('body').on('click','#scroll3', function next() {
   $('body').prepend('<img id="htmlMon" src="assets/green_monster" alt="HTML Monster">');
@@ -245,13 +244,14 @@ $('body').on('click','#scroll3', function next() {
       $('h3').eq(0).text(wrongScore);
       monster();
     }
-    var currentQuestion = htmlQuestion.splice(Math.floor(Math.random() * htmlQuestion.length), 1);
-    var selectQuestion = currentQuestion[0].question;
-    var selectChoice1 = currentQuestion[0].choices[0];
-    var selectChoice2 = currentQuestion[0].choices[1];
-    var selectChoice3 = currentQuestion[0].choices[2];
-    var selectChoice4 = currentQuestion[0].choices[3];
-    var answerChoice = currentQuestion[0].answer;
+    currentQuestion = htmlQuestion.splice(Math.floor(Math.random() * htmlQuestion.length), 1);
+    selectQuestion = currentQuestion[0].question;
+    selectChoice1 = currentQuestion[0].choices[0];
+    selectChoice2 = currentQuestion[0].choices[1];
+    selectChoice3 = currentQuestion[0].choices[2];
+    selectChoice4 = currentQuestion[0].choices[3];
+    answerChoice = currentQuestion[0].answer;
+    console.log("new answer: ", answerChoice)
     $('#questions').text(selectQuestion);
     $('#choice1').text(selectChoice1);
     $('#choice2').text(selectChoice2);
