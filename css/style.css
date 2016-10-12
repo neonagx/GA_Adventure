@@ -4,6 +4,12 @@ h1 {
   font-family: 'Press Start 2P', cursive;
 }
 
+audio {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
 #ga {
   color: red;
 }
