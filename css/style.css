@@ -73,6 +73,7 @@ body {
   font-size: 40px;
   background-image: url("../assets/snow.gif");
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #mainScreen {
