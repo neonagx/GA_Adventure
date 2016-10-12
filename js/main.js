@@ -30,7 +30,7 @@ var htmlQuestion = [
     answer: 'before the end of body'
   },
   {
-    question: 'What is " <p> "?',
+    question: 'What is " < p > "?',
     choices: ['paper','personal log','paragraph','ping'],
     answer: 'paragraph'
   },
@@ -158,6 +158,7 @@ var cssQuestion = [
 
 
 $('#startButton').on('click',function mainGame() {
+  $('body').css('background-image', 'none')
   $('body').html('<div id="mainScreen"></div>');
   var $screen = $('#mainScreen');
   $screen.html('<p id="intro">It is a world of General Assembly where an adventurer goes to become the Three Weeks Master.<p>')

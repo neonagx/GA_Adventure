@@ -1,18 +1,32 @@
 h1 {
-  font-size: 160px;
-  margin: 0 auto;
+  font-size: 150px;
   text-align: center;
   font-family: 'Press Start 2P', cursive;
+}
+
+#ga {
+  color: red;
+}
+
+#mainTitle {
+  color: white;
+  font-size: 160px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
 
 h3 {
   text-align: center;
 }
 
+#scroll1, #scroll2, #scroll3 {
+  margin: 100px 100px 100px 450px;
+}
+
 #startButton{
   font-size: 40px;
   font-family: 'Press Start 2P', cursive;
-  margin: 200px 900px 200px 600px;
+  margin: 300px 20px 30px 720px;
   border: 10px solid black;
 }
 
@@ -21,9 +35,11 @@ p {
   color: red;
 }
 
-body{
+body {
   font-family: 'Press Start 2P', cursive;
   font-size: 40px;
+  background-image: url(snow.gif);
+  background-size: cover;
 }
 
 #mainScreen {
@@ -34,7 +50,7 @@ body{
 }
 
 button {
-  font-size: 20px;
+  font-size: 25px;
   font-family: 'Press Start 2P', cursive;
   border: 10px solid black;
   width: 610px;
