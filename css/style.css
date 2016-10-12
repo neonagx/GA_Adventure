@@ -52,14 +52,19 @@ h3 {
 #resetButton {
   font-size: 30px;
   border: 5px solid black;
-  margin: 0px 900px 90px 900px;
+  margin: 0px 900px 10px 859px;
   float: none;
   text-align: center;
 }
 
-p {
-  font-size: 400px
+#resetButton:hover {
+  background-color: red;
+}
+
+.over {
+  font-size: 400px;
   color: red;
+  text-align: center;
 }
 
 body {
@@ -99,14 +104,21 @@ img {
 }
 
 #score {
-  float: right;
-  font-size: 40px;
+  float: left;
+  height: 280px;
+  font-size: 30px;
   border: 5px solid black;
 }
 
 #kill1 {
   text-align: center;
-  margin: 50px 300px 100px 300px;
+  margin: -32px 301px 10px 300px;
   font-size: 40px;
   border: 5px solid black;
+}
+
+#sign {
+  text-align: center;
+  color: white;
+  font-size: 100px;
 }

@@ -103,6 +103,7 @@ var cssQuestion = [
     answer: 'ID'
   }
 ]
+
   var javascriptQuestion = [
     {
       question: 'What is the five primitive types of Javascript?',
@@ -176,8 +177,10 @@ $('body').on('click','#scroll2', function next() {
   $('#scroll2').attr('id', 'scroll3')
   $('#intro').text('Journey will not be an easy one. Good luck!!');
 })
+
 var stageLevel = 1
 var wrongScore = 0
+var monsterDamage = 10
 
 function monster() {
 if(wrongScore === 1){
@@ -190,11 +193,10 @@ if(wrongScore === 1){
   console.log('Monster started to growl, poised right at you')
 } else if (wrongScore === 5) {
   console.log('Monster charged at you, slashed your guts and ate you as a whole!')
-  $('body').html('<p>YOU DIED...GAME OVER</p>')
+  $('body').html('<p class="over">YOU            DIED..   GAME OVER</p>')
 }
 }
 
-var monsterDamage = 10
 function killingMon1() {
   if(monsterDamage === 9){
     console.log('Damage 1 to the monster')
@@ -226,71 +228,6 @@ var selectChoice2 = currentQuestion[0].choices[1];
 var selectChoice3 = currentQuestion[0].choices[2];
 var selectChoice4 = currentQuestion[0].choices[3];
 var answerChoice = currentQuestion[0].answer;
-
-
-//Question 1 What is HTML?
-$('body').on('click','#scroll3', function next() {
-  alert('HTML Monster approaches!!')
-  $('body').prepend('<img id="htmlMon" src="assets/green_monster" alt="HTML Monster">');
-  $('body').prepend('<div id="score">Number Wrong:</div>')
-  $('#score').prepend('<div id="level">Level: </div>')
-  $('<div id="kill1">Monster Health:</div>').insertAfter('#htmlMon')
-  $('<h1>', {html: stageLevel}).appendTo('#level')
-  $('<h3>', {html: wrongScore}).appendTo('#score')
-  $('<h2>', {html: monsterDamage}).appendTo('#kill1')
-  $('<div id="resetButton" type="reset" value="Reset">Reset</div>').insertAfter('#kill1')
-  var $screen = $('#mainScreen');
-  $screen.html('<div id="questions">'+selectQuestion+'</div>');
-  $screen.append('<button id="choice1">'+selectChoice1+'</button><button id="choice2">'+selectChoice2+'</button><button id="choice3">'+selectChoice3+'</button><button id="choice4">'+selectChoice4+'</button>');
-  $('button').on('click', function(){
-    if($(this).text() === answerChoice){//finding the right choice
-      monsterDamage -= 1
-      $('h2').eq(0).text(monsterDamage)
-      killingMon1()
-    } else {
-      wrongScore += 1;
-      $('h3').eq(0).text(wrongScore);
-      monster();
-    }
-    //first if statement checks all questions were answered
-    if(10 - monsterDamage + wrongScore == 10) {
-
-      if(monsterDamage >= 5){
-        $('body').html('<p>YOU DIED...GAME OVER</p>')
-        //if you beat the level, stageLevel is added and changing level.
-      } else {
-        stageLevel += 1
-        wrongScore = 0
-        monsterDamage = 10
-        $('h3').eq(0).text(wrongScore)
-        $('h2').eq(0).text(monsterDamage)
-        $('h1').eq(0).text(stageLevel)
-      }
-    }
-    //replacing previous question with new question
-    if(stageLevel == 1){
-    currentQuestion = htmlQuestion.splice(Math.floor(Math.random() * htmlQuestion.length), 1);
-    selectQuestion = currentQuestion[0].question;
-    selectChoice1 = currentQuestion[0].choices[0];
-    selectChoice2 = currentQuestion[0].choices[1];
-    selectChoice3 = currentQuestion[0].choices[2];
-    selectChoice4 = currentQuestion[0].choices[3];
-    answerChoice = currentQuestion[0].answer;
-    $('#questions').text(selectQuestion);
-    $('#choice1').text(selectChoice1);
-    $('#choice2').text(selectChoice2);
-    $('#choice3').text(selectChoice3);
-    $('#choice4').text(selectChoice4);
-    //if it is stage two, then do replace html question with css
-  } else if(stageLevel == 2){
-    cssMon()
-  } else if(stageLevel == 3){
-    javascriptMon()
-  } else {
-    $('body').html('<p>Victory</p>')
-  }
-  })
-})
 
 function cssMon(){
   currentQuestion = cssQuestion.splice(Math.floor(Math.random() * cssQuestion.length), 1);
@@ -325,3 +262,70 @@ function javascriptMon(){
   $('#choice3').text(selectChoice3);
   $('#choice4').text(selectChoice4);
 }
+
+$('body').on('click','#scroll3', function next() {
+  alert('HTML Monster approaches!!')
+  $('body').prepend('<img id="htmlMon" src="assets/green_monster" alt="HTML Monster">');
+  $('body').prepend('<div id="score">Number Wrong:</div>')
+  $('#score').prepend('<div id="level">Level: </div>')
+  $('<div id="kill1">Monster Health:</div>').insertAfter('#htmlMon')
+  $('<h1>', {html: stageLevel}).appendTo('#level')
+  $('<h3>', {html: wrongScore}).appendTo('#score')
+  $('<h2>', {html: monsterDamage}).appendTo('#kill1')
+  $('<div id="resetButton" type="reset" value="Reset">Reset</div>').insertAfter('#kill1')
+  var $screen = $('#mainScreen');
+  $screen.html('<div id="questions">'+selectQuestion+'</div>');
+  $screen.append('<button id="choice1">'+selectChoice1+'</button><button id="choice2">'+selectChoice2+'</button><button id="choice3">'+selectChoice3+'</button><button id="choice4">'+selectChoice4+'</button>');
+  $('button').on('click', function(){
+    if($(this).text() === answerChoice){//finding the right choice
+      monsterDamage -= 1
+      $('h2').eq(0).text(monsterDamage)
+      killingMon1()
+    } else {
+      wrongScore += 1;
+      $('h3').eq(0).text(wrongScore);
+      monster();
+    }
+    //first if statement checks all questions were answered
+    if(10 - monsterDamage + wrongScore == 10) {
+      if(monsterDamage >= 5){
+        alert("Monster was still standing..It ate you...")
+        $('body').html('<p class="over">YOU DIED...GAME OVER</p>')
+        //if you beat the level, stageLevel is added and changing level.
+      } else {
+        stageLevel += 1
+        wrongScore = 0
+        monsterDamage = 10
+        $('h3').eq(0).text(wrongScore)
+        $('h2').eq(0).text(monsterDamage)
+        $('h1').eq(0).text(stageLevel)
+      }
+    }
+    //replacing previous question with new question
+    if(stageLevel == 1){
+    currentQuestion = htmlQuestion.splice(Math.floor(Math.random() * htmlQuestion.length), 1);
+    selectQuestion = currentQuestion[0].question;
+    selectChoice1 = currentQuestion[0].choices[0];
+    selectChoice2 = currentQuestion[0].choices[1];
+    selectChoice3 = currentQuestion[0].choices[2];
+    selectChoice4 = currentQuestion[0].choices[3];
+    answerChoice = currentQuestion[0].answer;
+    $('#questions').text(selectQuestion);
+    $('#choice1').text(selectChoice1);
+    $('#choice2').text(selectChoice2);
+    $('#choice3').text(selectChoice3);
+    $('#choice4').text(selectChoice4);
+    //if it is stage two, then do replace html question with css
+  } else if(stageLevel == 2){
+    alert("CSS Monster approaches!!")
+    cssMon()
+  } else if(stageLevel == 3){
+    alert("Javascript Monster Approaches!! Last Monster!")
+    javascriptMon()
+  } else {
+    alert("You Won!! Monster has been defeated!!")
+    $('body').html('<p id="sign">Victory!! You are the Three Week Master! Now go learn some more codes!</p>')
+    $('body').css('background-image', 'url(assets/victory-firework.gif)')
+  }
+  })
+})
