@@ -163,6 +163,8 @@ $('#startButton').on('click',function mainGame() {
   var $screen = $('#mainScreen');
   $screen.html('<p id="intro">Enter the World of General Assembly.  An adventurer goes to learn the art of code and become the Code Master.<p>')
   $screen.append('<button id="scroll1">Next &rarr;</button>')
+  $screen.append('<audio controls loop autoplay="source"></audio>')
+  $('audio').append('<source src="./assets/pocket-garden.wav" type="audio/wav">')
 })
 
 $('body').on('click','#scroll1', function next() {
@@ -228,6 +230,7 @@ var answerChoice = currentQuestion[0].answer;
 
 //Question 1 What is HTML?
 $('body').on('click','#scroll3', function next() {
+  alert('HTML Monster approaches!!')
   $('body').prepend('<img id="htmlMon" src="assets/green_monster" alt="HTML Monster">');
   $('body').prepend('<div id="score">Number Wrong:</div>')
   $('#score').prepend('<div id="level">Level: </div>')
