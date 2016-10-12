@@ -173,7 +173,7 @@ $('body').on('click','#scroll2', function next() {
   $('#scroll2').attr('id', 'scroll3')
   $('#intro').text('Journey will not be an easy one.  Through the peril, there is a path to victory.  Good luck!!');
 })
-
+var stageLevel = 1
 var wrongScore = 0
 
 function monster() {
@@ -215,7 +215,7 @@ function killingMon1() {
     console.log('Monster Died!!! You are the victor!!')
   }
 }
-var asdf = "WTF"
+
 var currentQuestion = htmlQuestion.splice(Math.floor(Math.random() * htmlQuestion.length), 1);
 var selectQuestion = currentQuestion[0].question;
 var selectChoice1 = currentQuestion[0].choices[0];
@@ -223,19 +223,22 @@ var selectChoice2 = currentQuestion[0].choices[1];
 var selectChoice3 = currentQuestion[0].choices[2];
 var selectChoice4 = currentQuestion[0].choices[3];
 var answerChoice = currentQuestion[0].answer;
-console.log(answerChoice);
+
+
 //Question 1 What is HTML?
 $('body').on('click','#scroll3', function next() {
   $('body').prepend('<img id="htmlMon" src="assets/green_monster" alt="HTML Monster">');
   $('body').prepend('<div id="score">Number Wrong:</div>')
+  $('#score').prepend('<div id="level">Level: </div>')
   $('<div id="kill1">Monster Health:</div>').insertAfter('#htmlMon')
+  $('<h1>', {html: stageLevel}).appendTo('#level')
   $('<h3>', {html: wrongScore}).appendTo('#score')
   $('<h2>', {html: monsterDamage}).appendTo('#kill1')
   var $screen = $('#mainScreen');
   $screen.html('<div id="questions">'+selectQuestion+'</div>');
   $screen.append('<button id="choice1">'+selectChoice1+'</button><button id="choice2">'+selectChoice2+'</button><button id="choice3">'+selectChoice3+'</button><button id="choice4">'+selectChoice4+'</button>');
   $('button').on('click', function(){
-    if($(this).text() === answerChoice){
+    if($(this).text() === answerChoice){//finding the right choice
       monsterDamage -= 1
       $('h2').eq(0).text(monsterDamage)
       killingMon1()
@@ -244,6 +247,23 @@ $('body').on('click','#scroll3', function next() {
       $('h3').eq(0).text(wrongScore);
       monster();
     }
+    //first if statement checks all questions were answered
+    if(10 - monsterDamage + wrongScore == 10) {
+
+      if(monsterDamage >= 5){
+        $('body').html('<p>YOU DIED...GAME OVER</p>')
+        //if you beat the level, stageLevel is added and changing level.
+      } else {
+        stageLevel += 1
+        wrongScore = 0
+        monsterDamage = 10
+        $('h3').eq(0).text(wrongScore)
+        $('h2').eq(0).text(monsterDamage)
+        $('h1').eq(0).text(stageLevel)
+      }
+    }
+    //replacing previous question with new question
+    if(stageLevel == 1){
     currentQuestion = htmlQuestion.splice(Math.floor(Math.random() * htmlQuestion.length), 1);
     selectQuestion = currentQuestion[0].question;
     selectChoice1 = currentQuestion[0].choices[0];
@@ -251,15 +271,68 @@ $('body').on('click','#scroll3', function next() {
     selectChoice3 = currentQuestion[0].choices[2];
     selectChoice4 = currentQuestion[0].choices[3];
     answerChoice = currentQuestion[0].answer;
-    console.log("new answer: ", answerChoice)
     $('#questions').text(selectQuestion);
     $('#choice1').text(selectChoice1);
     $('#choice2').text(selectChoice2);
     $('#choice3').text(selectChoice3);
     $('#choice4').text(selectChoice4);
+    //if it is stage two, then do replace html question with css
+  } else if(stageLevel == 2){
+    cssMon()
+  } else if(stageLevel == 3){
+    javascriptMon()
+  }
   })
 })
 
+function cssMon(){
+  currentQuestion = cssQuestion.splice(Math.floor(Math.random() * cssQuestion.length), 1);
+  selectQuestion = currentQuestion[0].question;
+  selectChoice1 = currentQuestion[0].choices[0];
+  selectChoice2 = currentQuestion[0].choices[1];
+  selectChoice3 = currentQuestion[0].choices[2];
+  selectChoice4 = currentQuestion[0].choices[3];
+  answerChoice = currentQuestion[0].answer;
+  $('#htmlMon').attr('id', 'cssMon').attr('src', 'assets/blueMon');
+  $('<h3>', {html: wrongScore}).text('#score')
+  $('<h2>', {html: monsterDamage}).text('#kill1')
+  $('#questions').text(selectQuestion);
+  $('#choice1').text(selectChoice1);
+  $('#choice2').text(selectChoice2);
+  $('#choice3').text(selectChoice3);
+  $('#choice4').text(selectChoice4);
+}
+
+function javascriptMon(){
+  currentQuestion= javascriptQuestion.splice(Math.floor(Math.random() * javascriptQuestion.length), 1);
+  selectQuestion = currentQuestion[0].question;
+  selectChoice1 = currentQuestion[0].choices[0];
+  selectChoice2 = currentQuestion[0].choices[1];
+  selectChoice3 = currentQuestion[0].choices[2];
+  selectChoice4 = currentQuestion[0].choices[3];
+  answerChoice = currentQuestion[0].answer;
+  $('#cssMon').attr('id', 'javascriptMon').attr('src', 'assets/');
+  $('#questions').text(selectQuestion);
+  $('#choice1').text(selectChoice1);
+  $('#choice2').text(selectChoice2);
+  $('#choice3').text(selectChoice3);
+  $('#choice4').text(selectChoice4);
+}
+// } else {
+//   console.log('Monster charged at you, slashed your guts and ate you as a whole!')
+//   $('body').html('<p>YOU DIED...GAME OVER</p>')
+
+// if(monsterDamage > 5){
+//     $('#htmlMon').attr('id', 'cssMon').attr('src', 'assets/blueMon');
+//     $('#questions').text(selectCss);
+//     $('#choice1').text(selectNewChoice1);
+//     $('#choice2').text(selectNewChoice2);
+//     $('#choice3').text(selectNewChoice3);
+//     $('#choice4').text(selectNewChoice4);
+//   } else {
+//     console.log('Monster charged at you, slashed your guts and ate you as a whole!')
+//     $('body').html('<p>YOU DIED...GAME OVER</p>')
+//   }
     // if($('.choice').find(currentQuestion[0].answer) == currentQuestion[0].answer) {
     // } else {
     //   wrongScore += 1;
