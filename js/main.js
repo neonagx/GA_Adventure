@@ -161,18 +161,18 @@ $('#startButton').on('click',function mainGame() {
   $('body').css('background-image', 'none')
   $('body').html('<div id="mainScreen"></div>');
   var $screen = $('#mainScreen');
-  $screen.html('<p id="intro">It is a world of General Assembly where an adventurer goes to become the Three Weeks Master.<p>')
-  $screen.append('<button id="scroll1">Next--></button>')
+  $screen.html('<p id="intro">Enter the World of General Assembly.  An adventurer goes to learn the art of code and become the Code Master.<p>')
+  $screen.append('<button id="scroll1">Next &rarr;</button>')
 })
 
 $('body').on('click','#scroll1', function next() {
   $('#scroll1').attr('id', 'scroll2')
-  $('#intro').text('he or she must go through three trials of defeating the HTML, CSS and Javascript monsters');
+  $('#intro').text('One must defeat the HTML, CSS and Javascript monsters using knowledge of the code.  You will earn the title of Three Weeks Master.');
 })
 
 $('body').on('click','#scroll2', function next() {
   $('#scroll2').attr('id', 'scroll3')
-  $('#intro').text('Journey will not be an easy one.  Through the peril, there is a path to victory.  Good luck!!');
+  $('#intro').text('Journey will not be an easy one. Good luck!!');
 })
 var stageLevel = 1
 var wrongScore = 0
@@ -235,6 +235,7 @@ $('body').on('click','#scroll3', function next() {
   $('<h1>', {html: stageLevel}).appendTo('#level')
   $('<h3>', {html: wrongScore}).appendTo('#score')
   $('<h2>', {html: monsterDamage}).appendTo('#kill1')
+  $('<div id="resetButton" type="reset" value="Reset">Reset</div>').insertAfter('#kill1')
   var $screen = $('#mainScreen');
   $screen.html('<div id="questions">'+selectQuestion+'</div>');
   $screen.append('<button id="choice1">'+selectChoice1+'</button><button id="choice2">'+selectChoice2+'</button><button id="choice3">'+selectChoice3+'</button><button id="choice4">'+selectChoice4+'</button>');
