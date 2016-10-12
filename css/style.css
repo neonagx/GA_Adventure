@@ -25,6 +25,10 @@ h3 {
   text-align: center;
 }
 
+#intro {
+  font-size: 75px;
+}
+
 #scroll1, #scroll2, #scroll3 {
   margin: 100px 100px 100px 450px;
 }
@@ -32,7 +36,7 @@ h3 {
 #startButton{
   font-size: 40px;
   font-family: 'Press Start 2P', cursive;
-  margin: 300px 20px 30px 720px;
+  margin: 0px 0px 0px 770px;
   border: 10px solid black;
 }
 
@@ -44,7 +48,7 @@ p {
 body {
   font-family: 'Press Start 2P', cursive;
   font-size: 40px;
-  background-image: url(snow.gif);
+  background-image: url("../assets/snow.gif");
   background-size: cover;
 }
 
@@ -63,13 +67,14 @@ button {
   height: 400px;
   margin: 45px 50px 10px 60px;
   display: inline-block;
+  float: left;
 }
 
 img {
   height: 800px;
   width: 950px;
   border: 20px solid red;
-  margin: 50px 700px 50px 550px
+  margin: 50px 700px 50px 550px;
 }
 
 #questions {

@@ -22,7 +22,7 @@ var htmlQuestion = [
   {
     question: 'On Atom/Sublime text editor, how do you bring up Doctype HTML in index.html?',
     choices: ['typing html and pressing enter','It should just summon html by itself','HTML should already exit','typing html and pressing tab'],
-    answer: 'typing html and pressing tab'
+    answer: 'typing html and pressing enter'
   },
   {
     question: 'Where does Javascript src go?',
@@ -64,7 +64,7 @@ var cssQuestion = [
   },
   {
     question: 'What are three different ways to use CSS to style HTML?',
-    choices: ['Insert Sheet, Input Sheet, Style Sheet','External style sheet, Eternal style sheet, Intra style sheet', 'Eternal style sheet, Intra style sheet, Insert style','Extra style sheet, Idra style sheet, Info style'],
+    choices: ['External style sheet, internal style sheet, Inline style','External style sheet, Eternal style sheet, Intra style sheet', 'Eternal style sheet, Intra style sheet, Insert style','Extra style sheet, Idra style sheet, Info style'],
     answer: 'External style sheet, internal style sheet, Inline style'
   },
   {
@@ -314,7 +314,7 @@ function javascriptMon(){
   selectChoice3 = currentQuestion[0].choices[2];
   selectChoice4 = currentQuestion[0].choices[3];
   answerChoice = currentQuestion[0].answer;
-  $('#cssMon').attr('id', 'javascriptMon').attr('src', 'assets/');
+  $('#cssMon').attr('id', 'javascriptMon').attr('src', 'assets/lastMon');
   $('#questions').text(selectQuestion);
   $('#choice1').text(selectChoice1);
   $('#choice2').text(selectChoice2);
