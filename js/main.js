@@ -37,8 +37,8 @@ var htmlQuestion = [
   },
   {
     question: 'What is the most commonly seen tag and a generic container for content?',
-    choices: ['<div>','<p>','<ul>','<span>'],
-    answer: '<div>'
+    choices: ['"< div >"','"< p >"','"< ul >"','" < span > "'],
+    answer: '" < div > "'
   },
   {
     question: 'What tag links us to other page?',
