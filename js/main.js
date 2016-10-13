@@ -37,7 +37,7 @@ var htmlQuestion = [
   },
   {
     question: 'What is the most commonly seen tag and a generic container for content?',
-    choices: ['"< div >"','"< p >"','"< ul >"','" < span > "'],
+    choices: ['" < div > "','"< p >"','"< ul >"','" < span > "'],
     answer: '" < div > "'
   },
   {
@@ -200,25 +200,41 @@ if(wrongScore === 1){
 
 function killingMon1() {
   if(monsterDamage === 9){
-    alert('Damage 1 to the monster')
+    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
+    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    setTimeout(function(){ alert("Damage 1 to the monster"); }, 500);
   } else if (monsterDamage === 8) {
-    $('source').attr('src', 'assets/firstMonroar.wav')
-    alert('Another Damage 1 to the Monster')
+    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
+    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    setTimeout(function(){ alert('Another Damage 1 to the Monster'); }, 500);
   } else if (monsterDamage === 7) {
-    $('source').attr('src', 'assets/firstMonroar.wav')
-    alert('Damage 1 to monster! Monster is dazed!')
+    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
+    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    setTimeout(function(){ alert('Damage 1 to the monster! Monster is dazed!'); }, 500);
   } else if (monsterDamage === 6) {
-    alert('Damage 1 to the Monster, it is weakened!')
+    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
+    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    setTimeout(function(){ alert('Damage 1 to the monster! it is weakened'); }, 500);
   } else if (monsterDamage === 5) {
-    alert('Damage 1 to monster, he is bleeding from his eyes')
+    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
+    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    setTimeout(function(){ alert('Damage 1 to the monster! he is bleeding from his eyes'); }, 500);
   } else if (monsterDamage === 4) {
-    alert('Damage 1 to monster, one leg is chopped off')
+    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
+    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    setTimeout(function(){ alert('Damage 1 to the monster! One leg is chopped off!'); }, 500);
   } else if (monsterDamage === 3) {
-    alert('Damage 1 to monster, arms are chopped off')
+    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
+    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    setTimeout(function(){ alert('Damage 1 to the monster! Arms are chopped off!'); }, 500);
   } else if (monsterDamage === 2) {
-    alert('Damage 1 to monster, guts are spilled out.  Monster is calling for mercy')
+    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
+    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    setTimeout(function(){ alert('Damage 1 to the monster! guts are spilled out.  Monster is calling for mercy!'); }, 500);
   } else if (monsterDamage === 1) {
-    alert('Damage 1 to monster, it is about to die!')
+    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
+    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    setTimeout(function(){ alert('Damage 1 to the monster! It is about to die!!'); }, 500);
   } else if (monsterDamage === 0) {
     alert('Monster Died!!! You are the victor!!')
   }
@@ -233,7 +249,8 @@ var selectChoice4 = currentQuestion[0].choices[3];
 var answerChoice = currentQuestion[0].answer;
 
 function alertCss(){
-  alert("CSS Monster Approaches!!")
+  alert("Monster ran away from fear! You won this stage!")
+  alert("Next up CSS! CSS Monster Approaches!!")
 }
 
 
@@ -245,6 +262,7 @@ function cssMon(){
   selectChoice3 = currentQuestion[0].choices[2];
   selectChoice4 = currentQuestion[0].choices[3];
   answerChoice = currentQuestion[0].answer;
+  $('body').css('background-image', 'url(assets/levelTwo.gif)')
   $('#htmlMon').attr('id', 'cssMon').attr('src', 'assets/blueMon');
   $('<h3>', {html: wrongScore}).text('#score')
   $('<h2>', {html: monsterDamage}).text('#kill1')
@@ -276,7 +294,7 @@ $('body').on('click','#scroll3', function next() {
   $('body').css('background-image', 'url(assets/levelOne.gif)')
   $('body').css('color', 'white')
   $('#kill1').css('border', 'white')
-  alert('HTML Monster approaches!!')
+  alert('First level HTML!! HTML Monster approaches!!')
   $('audio').attr('src', 'assets/firstMon.wav')
   $('body').prepend('<img id="htmlMon" src="assets/green_monster" alt="HTML Monster">');
   $('body').prepend('<div id="score">Number Wrong:</div>')
@@ -344,8 +362,7 @@ $('body').on('click','#scroll3', function next() {
   } else {
     alert("You Won!! Monster has been defeated!!")
     $('body').html('<p id="sign">Victory!! You are the Three Week Master! Now go learn some more codes!</p>')
-    $('body').append('<audio controls loop autoplay="source"></audio>')
-    $('audio').append('<source src="./assets/code-geek.wav" type="audio/wav">')
+    $('body').append('<audio controls loop autoplay="source"><source src="./assets/code-geek.wav" type="audio/wav"></audio>')
     $('body').css('background-image', 'url(assets/victory-firework.gif)')
   }
   })
