@@ -303,8 +303,10 @@ $('body').on('click','#scroll3', function next() {
         stageLevel += 1
         if (stageLevel == 2) {
           alertCss()
+          $('audio').attr('src', './assets/secondMon.wav')
         } else if (stageLevel == 3) {
           alert("Last Monster!! Javascript Monster")
+          $('audio').attr('src', './assets/lastMon.wav')
         }
         wrongScore = 0
         monsterDamage = 10
@@ -335,6 +337,8 @@ $('body').on('click','#scroll3', function next() {
   } else {
     alert("You Won!! Monster has been defeated!!")
     $('body').html('<p id="sign">Victory!! You are the Three Week Master! Now go learn some more codes!</p>')
+    $('body').append('<audio controls loop autoplay="source"></audio>')
+    $('audio').append('<source src="./assets/code-geek.wav" type="audio/wav">')
     $('body').css('background-image', 'url(assets/victory-firework.gif)')
   }
   })
