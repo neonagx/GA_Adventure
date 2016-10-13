@@ -160,13 +160,12 @@ var cssQuestion = [
 
 
 $('#startButton').on('click',function mainGame() {
-  $('body').css('background-image', 'none')
+  $('body').css('background-image', 'url(assets/general_assembly.jpeg)')
   $('body').html('<div id="mainScreen"></div>');
+  $('body').append('<audio controls loop autoplay="source"><source src="./assets/pocket-garden.wav" type="audio/wav"></audio>')
   var $screen = $('#mainScreen');
   $screen.html('<p id="intro">Enter the World of General Assembly.  An adventurer goes to learn the art of code and become the Code Master.<p>')
   $screen.append('<button id="scroll1">Next &rarr;</button>')
-  $screen.append('<audio controls loop autoplay="source"></audio>')
-  $('audio').append('<source src="./assets/pocket-garden.wav" type="audio/wav">')
 })
 
 $('body').on('click','#scroll1', function next() {
@@ -195,6 +194,7 @@ if(wrongScore === 1){
 } else if (wrongScore === 5) {
   alert('Monster charged at you, slashed your guts and ate you as a whole!')
   $('body').html('<p class="over">YOU            DIED..   GAME OVER</p>')
+  $('body').append('<audio controls loop autoplay="source"><source src="./assets/game_over.wav" type="audio/wav"></audio>')
 }
 }
 
@@ -202,8 +202,10 @@ function killingMon1() {
   if(monsterDamage === 9){
     alert('Damage 1 to the monster')
   } else if (monsterDamage === 8) {
+    $('source').attr('src', 'assets/firstMonroar.wav')
     alert('Another Damage 1 to the Monster')
   } else if (monsterDamage === 7) {
+    $('source').attr('src', 'assets/firstMonroar.wav')
     alert('Damage 1 to monster! Monster is dazed!')
   } else if (monsterDamage === 6) {
     alert('Damage 1 to the Monster, it is weakened!')
@@ -261,6 +263,7 @@ function javascriptMon(){
   selectChoice3 = currentQuestion[0].choices[2];
   selectChoice4 = currentQuestion[0].choices[3];
   answerChoice = currentQuestion[0].answer;
+  $('body').css('background-image', 'url(assets/lastLevel.gif)')
   $('#cssMon').attr('id', 'javascriptMon').attr('src', 'assets/lastMon');
   $('#questions').text(selectQuestion);
   $('#choice1').text(selectChoice1);
@@ -271,9 +274,10 @@ function javascriptMon(){
 
 $('body').on('click','#scroll3', function next() {
   $('body').css('background-image', 'url(assets/levelOne.gif)')
-  $('body').append('<audio controls loop autoplay="source"></audio>')
-  $('audio').append('<source src="./assets/firstMon.wav" type="audio/wav">')
+  $('body').css('color', 'white')
+  $('#kill1').css('border', 'white')
   alert('HTML Monster approaches!!')
+  $('audio').attr('src', 'assets/firstMon.wav')
   $('body').prepend('<img id="htmlMon" src="assets/green_monster" alt="HTML Monster">');
   $('body').prepend('<div id="score">Number Wrong:</div>')
   $('#score').prepend('<div id="level">Level: </div>')
@@ -300,6 +304,7 @@ $('body').on('click','#scroll3', function next() {
       if(monsterDamage >= 5){
         alert("Monster was still standing..It ate you...")
         $('body').html('<p class="over">YOU DIED...GAME OVER</p>')
+        $('audio').attr('src', './assets/game_over.wav')
         //if you beat the level, stageLevel is added and changing level.
       } else {
         stageLevel += 1
