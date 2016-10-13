@@ -269,6 +269,8 @@ function javascriptMon(){
 }
 
 $('body').on('click','#scroll3', function next() {
+  $('body').append('<audio controls loop autoplay="source"></audio>')
+  $('audio').append('<source src="./assets/firstMon.wav" type="audio/wav">')
   alert('HTML Monster approaches!!')
   $('body').prepend('<img id="htmlMon" src="assets/green_monster" alt="HTML Monster">');
   $('body').prepend('<div id="score">Number Wrong:</div>')
