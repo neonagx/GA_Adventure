@@ -184,40 +184,40 @@ var monsterDamage = 10
 
 function monster() {
 if(wrongScore === 1){
-  console.log('Wrong! Monster has noticed you!!')
+  alert('Wrong! Monster has noticed you!!')
 } else if (wrongScore === 2) {
-  console.log('Monster has been enraged!!')
+  alert('Monster has been enraged!!')
 } else if (wrongScore === 3) {
-  console.log('Monster took out his sharp claw from his hands')
+  alert('Monster took out his sharp claw from his hands')
 } else if (wrongScore === 4) {
-  console.log('Monster started to growl, poised right at you')
+  alert('Monster started to growl, poised right at you')
 } else if (wrongScore === 5) {
-  console.log('Monster charged at you, slashed your guts and ate you as a whole!')
+  alert('Monster charged at you, slashed your guts and ate you as a whole!')
   $('body').html('<p class="over">YOU            DIED..   GAME OVER</p>')
 }
 }
 
 function killingMon1() {
   if(monsterDamage === 9){
-    console.log('Damage 1 to the monster')
+    alert('Damage 1 to the monster')
   } else if (monsterDamage === 8) {
-    console.log('Another Damage 1 to the Monster')
+    alert('Another Damage 1 to the Monster')
   } else if (monsterDamage === 7) {
-    console.log('Damage 1 to monster! Monster is dazed!')
+    alert('Damage 1 to monster! Monster is dazed!')
   } else if (monsterDamage === 6) {
-    console.log('Damage 1 to the Monster, it is weakened!')
+    alert('Damage 1 to the Monster, it is weakened!')
   } else if (monsterDamage === 5) {
-    console.log('Damage 1 to monster, he is bleeding from his eyes')
+    alert('Damage 1 to monster, he is bleeding from his eyes')
   } else if (monsterDamage === 4) {
-    console.log('Damage 1 to monster, one leg is chopped off')
+    alert('Damage 1 to monster, one leg is chopped off')
   } else if (monsterDamage === 3) {
-    console.log('Damage 1 to monster, arms are chopped off')
+    alert('Damage 1 to monster, arms are chopped off')
   } else if (monsterDamage === 2) {
-    console.log('Damage 1 to monster, guts are spilled out.  Monster is calling for mercy')
+    alert('Damage 1 to monster, guts are spilled out.  Monster is calling for mercy')
   } else if (monsterDamage === 1) {
-    console.log('Damage 1 to monster, it is about to die!')
+    alert('Damage 1 to monster, it is about to die!')
   } else if (monsterDamage === 0) {
-    console.log('Monster Died!!! You are the victor!!')
+    alert('Monster Died!!! You are the victor!!')
   }
 }
 
@@ -228,6 +228,11 @@ var selectChoice2 = currentQuestion[0].choices[1];
 var selectChoice3 = currentQuestion[0].choices[2];
 var selectChoice4 = currentQuestion[0].choices[3];
 var answerChoice = currentQuestion[0].answer;
+
+function alertCss(){
+  alert("CSS Monster Approaches!!")
+}
+
 
 function cssMon(){
   currentQuestion = cssQuestion.splice(Math.floor(Math.random() * cssQuestion.length), 1);
@@ -272,7 +277,7 @@ $('body').on('click','#scroll3', function next() {
   $('<h1>', {html: stageLevel}).appendTo('#level')
   $('<h3>', {html: wrongScore}).appendTo('#score')
   $('<h2>', {html: monsterDamage}).appendTo('#kill1')
-  $('<div id="resetButton" type="reset" value="Reset">Reset</div>').insertAfter('#kill1')
+  $('<div id="resetButton"><a href="https://neonagx.github.io/GA_Adventure/">Reset</a></div>').insertAfter('#kill1')
   var $screen = $('#mainScreen');
   $screen.html('<div id="questions">'+selectQuestion+'</div>');
   $screen.append('<button id="choice1">'+selectChoice1+'</button><button id="choice2">'+selectChoice2+'</button><button id="choice3">'+selectChoice3+'</button><button id="choice4">'+selectChoice4+'</button>');
@@ -294,6 +299,11 @@ $('body').on('click','#scroll3', function next() {
         //if you beat the level, stageLevel is added and changing level.
       } else {
         stageLevel += 1
+        if (stageLevel == 2) {
+          alertCss()
+        } else if (stageLevel == 3) {
+          alert("Last Monster!! Javascript Monster")
+        }
         wrongScore = 0
         monsterDamage = 10
         $('h3').eq(0).text(wrongScore)
@@ -317,10 +327,8 @@ $('body').on('click','#scroll3', function next() {
     $('#choice4').text(selectChoice4);
     //if it is stage two, then do replace html question with css
   } else if(stageLevel == 2){
-    alert("CSS Monster approaches!!")
     cssMon()
   } else if(stageLevel == 3){
-    alert("Javascript Monster Approaches!! Last Monster!")
     javascriptMon()
   } else {
     alert("You Won!! Monster has been defeated!!")

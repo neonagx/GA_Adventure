@@ -1,5 +1,5 @@
 h1 {
-  font-size: 150px;
+  font-size: 60px;
   text-align: center;
   font-family: 'Press Start 2P', cursive;
 }
@@ -13,6 +13,7 @@ audio {
 #ga {
   color: red;
   margin: 0px 0px 0px -50px;
+  font-size: 160px;
 }
 
 #mainTitle {
@@ -95,10 +96,10 @@ button {
 }
 
 img {
-  height: 800px;
-  width: 950px;
+  height: 700px;
+  width: 800px;
   border: 20px solid red;
-  margin: 50px 700px 50px 550px;
+  margin: 50px 700px 50px 634px;
 }
 
 #questions {
