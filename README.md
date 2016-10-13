@@ -6,6 +6,9 @@
 
 GA Adventure is an interactive trivia game where the Adventurer goes to earn title "First Three Weeks Master" by defeating three stages.  Each stage has a monster that asks 10 HTML, CSS or Javascript questions.  Getting 5 or more questions after 10 questions allows the Adventurer to move to next stage.  Less than that, the Adventurer is devoured dies, leading to Game Over.  Passing all three stages makes you become the "First Three Weeks Master" and win the game.
 
+##Opening the game
+Go to or type in  https://neonagx.github.io/GA_Adventure/ on your web browser and play!
+
 ##Installation Instructions
 On the url of your website, type in https://github.com/neonagx/GA_Adventure and press enter.  You will be at my game web pages.  Click on clone or download button on the middle right of the screen where it will show you the clone link.  Copy the link and go to your terminal.  Type in git clone
 git@github.com:neonagx/GA_Adventure.git with a path to the file you want to download to.  Once downloaded, just open the directory where you stored the game, open the index.html and enjoy the game!
