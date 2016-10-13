@@ -1,3 +1,4 @@
+$(document).ready(function(){
 var htmlQuestion = [
   {
     question: 'What is HTML?',
@@ -269,6 +270,7 @@ function javascriptMon(){
 }
 
 $('body').on('click','#scroll3', function next() {
+  $('body').css('background-image', 'url(assets/levelOne.gif)')
   $('body').append('<audio controls loop autoplay="source"></audio>')
   $('audio').append('<source src="./assets/firstMon.wav" type="audio/wav">')
   alert('HTML Monster approaches!!')
@@ -342,4 +344,5 @@ $('body').on('click','#scroll3', function next() {
     $('body').css('background-image', 'url(assets/victory-firework.gif)')
   }
   })
+})
 })
