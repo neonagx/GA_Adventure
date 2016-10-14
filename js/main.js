@@ -213,33 +213,24 @@ function damageSound(){
 }
 
 function killingMon1() {
-  if(monsterDamage === 9){
-    damageSound();
-    setTimeout(function(){ alert("Damage 1 to the monster"); }, 500);
+  if(monsterDamage === 9) {
+    alert("Damage 1 to the monster")
   } else if (monsterDamage === 8) {
-    damageSound();
-    setTimeout(function(){ alert('Another Damage 1 to the Monster'); }, 500);
+    alert('Another Damage 1 to the Monster')
   } else if (monsterDamage === 7) {
-    damageSound();
-    setTimeout(function(){ alert('Damage 1 to the monster! Monster is dazed!'); }, 500);
+    alert('Damage 1 to the monster! Monster is dazed!')
   } else if (monsterDamage === 6) {
-    damageSound();
-    setTimeout(function(){ alert('Damage 1 to the monster! it is weakened'); }, 500);
+    alert('Damage 1 to the monster! it is weakened')
   } else if (monsterDamage === 5) {
-    damageSound();
-    setTimeout(function(){ alert('Damage 1 to the monster! he is bleeding from his eyes'); }, 500);
+    alert('Damage 1 to the monster! he is bleeding from his eyes')
   } else if (monsterDamage === 4) {
-    damageSound();
-    setTimeout(function(){ alert('Damage 1 to the monster! One leg is chopped off!'); }, 500);
+    alert('Damage 1 to the monster! One leg is chopped off!')
   } else if (monsterDamage === 3) {
-    damageSound();
-    setTimeout(function(){ alert('Damage 1 to the monster! Arms are chopped off!'); }, 500);
+    alert('Damage 1 to the monster! Arms are chopped off!')
   } else if (monsterDamage === 2) {
-    damageSound();
-    setTimeout(function(){ alert('Damage 1 to the monster! guts are spilled out.  Monster is calling for mercy!'); }, 500);
+    alert('Damage 1 to the monster! guts are spilled out.  Monster is calling for mercy!')
   } else if (monsterDamage === 1) {
-    damageSound();
-    setTimeout(function(){ alert('Damage 1 to the monster! It is about to die!!'); }, 500);
+    alert('Damage 1 to the monster! It is about to die!!')
   } else if (monsterDamage === 0) {
     alert('Monster Died!!! You are the victor!!')
   }
@@ -313,10 +304,11 @@ $('body').on('click','#scroll3', function next() {
   $screen.html('<div id="questions">'+selectQuestion+'</div>');
   $screen.append('<button id="choice1">'+selectChoice1+'</button><button id="choice2">'+selectChoice2+'</button><button id="choice3">'+selectChoice3+'</button><button id="choice4">'+selectChoice4+'</button>');
   $('button').on('click', function(){
-    if($(this).text() === answerChoice){//finding the right choice
+    if($(this).text() === answerChoice){
+      damageSound();//finding the right choice
       monsterDamage -= 1
       $('h2').eq(0).text(monsterDamage)
-      killingMon1()
+      setTimeout(killingMon1() , 200);
     } else {
       wrongScore += 1;
       $('h3').eq(0).text(wrongScore);
@@ -332,8 +324,10 @@ $('body').on('click','#scroll3', function next() {
       } else {
         stageLevel += 1
         if (stageLevel == 2) {
+          $('audio').attr('src', './assets/secondMon.wav')
           alertCss()
         } else if (stageLevel == 3) {
+          $('audio').attr('src', './assets/lastMon.wav')
           alert("Last Monster!! Javascript Monster")
         }
         wrongScore = 0
