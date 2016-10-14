@@ -2,6 +2,8 @@
 
 ###By Sukhyun (Paul) Baik
 
+#WORK ON, music synch. Responsive CSS.  Adding more questions.  Fixing bug where pop up appears after one stage.  Better reset button.  Changing the design to make it more smoother (i.e. background image looks little off.)  Alert needs to be more decorated.  Experiment with canvas.  
+
 ##About GA Adventure
 
 GA Adventure is an interactive trivia game where the Adventurer goes to earn title "First Three Weeks Master" by defeating three stages.  Each stage has a monster that asks 10 HTML, CSS or Javascript questions.  Getting 5 or more questions after 10 questions allows the Adventurer to move to next stage.  Less than that, the Adventurer is devoured dies, leading to Game Over.  Passing all three stages makes you become the "First Three Weeks Master" and win the game.
