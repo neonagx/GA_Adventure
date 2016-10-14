@@ -182,15 +182,24 @@ var stageLevel = 1
 var wrongScore = 0
 var monsterDamage = 10
 
+function wrongSound(){
+  $('body').append('<audio id="echo" autoplay="source"><source src="./assets/wrongSound.wav" type="audio/wav"></audio>')
+  setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+}
+
 function monster() {
 if(wrongScore === 1){
-  alert('Wrong! Monster has noticed you!!')
+  wrongSound();
+  setTimeout(function(){ alert("Wrong! Monster has noticed you!"); }, 500);
 } else if (wrongScore === 2) {
-  alert('Monster has been enraged!!')
+  wrongSound();
+  setTimeout(function(){ alert("Monster is enraged!"); }, 500);
 } else if (wrongScore === 3) {
-  alert('Monster took out his sharp claw from his hands')
+  wrongSound();
+  setTimeout(function(){ alert("Monster took out his sharp claw from his hands!"); }, 500);
 } else if (wrongScore === 4) {
-  alert('Monster started to growl, poised right at you')
+  wrongSound();
+  setTimeout(function(){ alert("Monster started to growl, poised right at you!"); }, 500);
 } else if (wrongScore === 5) {
   alert('Monster charged at you, slashed your guts and ate you as a whole!')
   $('body').html('<p class="over">YOU            DIED..   GAME OVER</p>')
@@ -198,42 +207,38 @@ if(wrongScore === 1){
 }
 }
 
+function damageSound(){
+  $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
+  setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+}
+
 function killingMon1() {
   if(monsterDamage === 9){
-    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
-    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    damageSound();
     setTimeout(function(){ alert("Damage 1 to the monster"); }, 500);
   } else if (monsterDamage === 8) {
-    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
-    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    damageSound();
     setTimeout(function(){ alert('Another Damage 1 to the Monster'); }, 500);
   } else if (monsterDamage === 7) {
-    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
-    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    damageSound();
     setTimeout(function(){ alert('Damage 1 to the monster! Monster is dazed!'); }, 500);
   } else if (monsterDamage === 6) {
-    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
-    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    damageSound();
     setTimeout(function(){ alert('Damage 1 to the monster! it is weakened'); }, 500);
   } else if (monsterDamage === 5) {
-    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
-    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    damageSound();
     setTimeout(function(){ alert('Damage 1 to the monster! he is bleeding from his eyes'); }, 500);
   } else if (monsterDamage === 4) {
-    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
-    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    damageSound();
     setTimeout(function(){ alert('Damage 1 to the monster! One leg is chopped off!'); }, 500);
   } else if (monsterDamage === 3) {
-    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
-    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    damageSound();
     setTimeout(function(){ alert('Damage 1 to the monster! Arms are chopped off!'); }, 500);
   } else if (monsterDamage === 2) {
-    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
-    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    damageSound();
     setTimeout(function(){ alert('Damage 1 to the monster! guts are spilled out.  Monster is calling for mercy!'); }, 500);
   } else if (monsterDamage === 1) {
-    $('body').append('<audio id="echo" autoplay="source"><source src="./assets/firstMonroar.wav" type="audio/wav"></audio>')
-    setTimeout(function(){$('audio').remove("#echo"); }, 1000);
+    damageSound();
     setTimeout(function(){ alert('Damage 1 to the monster! It is about to die!!'); }, 500);
   } else if (monsterDamage === 0) {
     alert('Monster Died!!! You are the victor!!')
@@ -328,10 +333,8 @@ $('body').on('click','#scroll3', function next() {
         stageLevel += 1
         if (stageLevel == 2) {
           alertCss()
-          $('audio').attr('src', './assets/secondMon.wav')
         } else if (stageLevel == 3) {
           alert("Last Monster!! Javascript Monster")
-          $('audio').attr('src', './assets/lastMon.wav')
         }
         wrongScore = 0
         monsterDamage = 10
